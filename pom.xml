@@ -8,7 +8,15 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
   <packaging>jar</packaging>
   <version>1.0-SNAPSHOT</version>
   <name>Sqloreo</name>
-  
+
+  <distributionManagement>
+  <repository>
+    <id>github</id>
+    <name>amaroreo</name>
+    <url>https://maven.pkg.github.com/AmarKherala/sqloreo</url>
+  </repository>
+</distributionManagement>
+
   <url>http://maven.apache.org</url>
   <dependencies>
     <dependency>
