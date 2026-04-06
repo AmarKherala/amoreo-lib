@@ -1,4 +1,4 @@
-package net.amar.sqloreo;
+package net.amar.sqloreo.old;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,6 +9,7 @@ public class SelectQuery {
 
   private final Table table;
   private final List<Column<?>> columns;
+  private boolean selectAll;
   private Condition condition;
 
   public SelectQuery(Table table, Column<?>... columns) {
@@ -21,12 +22,21 @@ public class SelectQuery {
     return this;
   }
 
+  public void selectAll(boolean selectAll) {
+    this.selectAll = selectAll;
+  }
+
   public BuiltQuery build() {
     String cols = columns.stream()
             .map(Column::getFullName)
             .collect(Collectors.joining(", "));
 
-    String sql = "SELECT " + cols + " FROM " + table.getName();
+    String sql = "";
+
+    if (selectAll) 
+      sql = "SELECT * FROM "+table.getName();
+    else 
+    sql = "SELECT " + cols + " FROM " + table.getName();
 
     List<Object> params = new ArrayList<>();
     if (condition != null) {

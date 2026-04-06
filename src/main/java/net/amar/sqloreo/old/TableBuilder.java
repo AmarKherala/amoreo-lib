@@ -1,4 +1,4 @@
-package net.amar.sqloreo;
+package net.amar.sqloreo.old;
 
 public class TableBuilder {
 
