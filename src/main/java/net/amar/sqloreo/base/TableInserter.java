@@ -17,7 +17,7 @@ public class TableInserter {
     StringBuilder values = new StringBuilder();
 
     for (String s : columnsArray) {
-      columns.append(s+",");
+      columns.append(s).append(",");
       values.append("?,");
     }
 
@@ -43,7 +43,7 @@ public class TableInserter {
       if (field.isAnnotationPresent(Primary.class))
         continue;
 
-      columns.append(field.getName()+",");
+      columns.append(field.getName()).append(",");
       values.append("?,");
     }
 

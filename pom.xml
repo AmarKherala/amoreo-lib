@@ -18,7 +18,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/ma
       </plugin>
     </plugins>
   </build>
-  <version>1.0.8</version>
+  <version>1.0.9</version>
   <name>amoreo-lib</name>
 
   <distributionManagement>

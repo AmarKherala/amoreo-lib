@@ -7,7 +7,8 @@ import java.lang.reflect.Field;
 public class TableBuilder {
 
     private static String buildCreateStmt(Class<?> table) {
-
+        if (!table.isAnnotationPresent(Table.class))
+            throw new IllegalArgumentException("");
         StringBuilder sb = new StringBuilder();
         Table t = table.getAnnotation(Table.class);
         sb.append("CREATE TABLE IF NOT EXISTS %s (".formatted(t.name()));
