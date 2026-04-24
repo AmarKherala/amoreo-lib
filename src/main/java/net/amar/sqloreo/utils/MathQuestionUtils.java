@@ -7,7 +7,7 @@ import java.util.Random;
 public class MathQuestionUtils {
 
   
-    static class Question {
+   public static class Question {
         List<Integer> numbers;
         List<Character> ops;
 
