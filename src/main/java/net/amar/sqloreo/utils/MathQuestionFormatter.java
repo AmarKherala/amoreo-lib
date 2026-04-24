@@ -1,3 +1,5 @@
+package net.amar.sqloreo.utils;
+
 import java.util.List;
 
 public class MathQuestionFormatter {
